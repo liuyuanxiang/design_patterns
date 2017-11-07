@@ -10,4 +10,17 @@ class plainCoffee{
             $decorater->before();
         }
     }
+    public function after(){
+        foreach($this->decoraters as $decorater){
+            $decorater->after();
+        }
+    }
+    public function makeCoffce(){
+        $this->before();
+        $this->addCoffce();
+        $this->after();
+    }
+    public function addCoffce(){
+        echo "add coffce<br/>";
+    }
 }
